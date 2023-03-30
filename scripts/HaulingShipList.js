@@ -7,10 +7,8 @@ export const HaulingShipList = () => {
 
     for (const ship of ships) {
         shipsHTML += `<li
-            data-type="haulingShip"
-            data-dock=${ship.dockId}
+            data-type="hauler"
             data-id=${ship.id}
-            data-name="${ship.name}"
             >${ship.name}</li>`
     }
 
@@ -24,7 +22,7 @@ document.addEventListener(
     (clickEvent) => {
         const itemClicked = clickEvent.target
 
-        if (itemClicked.dataset.type === "haulingShip") {
+        if (itemClicked.dataset.type === "hauler") {
             const ships = getShippingShips()
             const primaryKeyValue = itemClicked.dataset.id
 
@@ -35,7 +33,7 @@ document.addEventListener(
                 }
             }
 
-            window.alert(`${itemClicked.dataset.name} is hauling ${shipsHauled} shipping ships`)
+            window.alert(`This hauler is carrying ${shipsHauled} shipping ships`)
         }
     }
 )
