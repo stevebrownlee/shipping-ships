@@ -26,11 +26,11 @@ document.addEventListener(
 
         if (itemClicked.dataset.type === "shippingShip") {
             const ships = getHaulingShips()
-            const primaryKeyValue = itemClicked.dataset.id
+            const haulerPK = itemClicked.dataset.hauler
 
             let haulingShip = { name: "Incorrect" }
             for (const ship of ships) {
-                if (parseInt(itemClicked.dataset.hauler) === ship.id) {
+                if (parseInt(haulerPK) === ship.id) {
                     haulingShip = ship
                 }
             }
